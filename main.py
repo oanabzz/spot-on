@@ -29,43 +29,15 @@ app = Flask(__name__, static_url_path="", static_folder="./static")
 
 @app.route('/')
 def homepage():
-    # # Create a Cloud Datastore client.
-    # datastore_client = datastore.Client()
-    #
-    # # Use the Cloud Datastore client to fetch information from Datastore about
-    # # each photo.
-    # query = datastore_client.query(kind='Faces')
-    # image_entities = list(query.fetch())
-
     # Create a Cloud Datastore client.
     datastore_client = datastore.Client()
 
-    # Fetch the current date / time.
-    current_datetime = datetime.now()
+    # Use the Cloud Datastore client to fetch information from Datastore about
+    # each photo.
+    query = datastore_client.query(kind='Events')
+    image_entities = list(query.fetch())
 
-    # The kind for the new entity.
-    kind = 'Events'
-
-    # The name/ID for the new entity.
-    name = "3213213"
-
-    # Create the Cloud Datastore key for the new entity.
-    key = datastore_client.key(kind, name)
-
-    # Construct the new entity using the key. Set dictionary values for entity
-    # keys blob_name, storage_public_url, timestamp, and joy.
-    entity = datastore.Entity(key)
-    entity['begin_date'] = "Wed, 25 Jul 2018 10:59:18 GMT"
-    entity['description'] = "petru a luat foc"
-    entity['end_date'] = "Wed, 25 Jul 2018 10:59:18 GMT"
-    entity['latitude'] = 47.19409527764352
-    entity['longitude'] = 25.76517018481536
-    entity['radius'] = 350
-    entity['status'] = True
-    entity['type'] = "fire"
-
-    # Save the new entity to Datastore.
-    datastore_client.put(entity)
+    print(image_entities)
 
     # Return a Jinja2 HTML template and pass in image_entities as a parameter.
     return app.send_static_file('map_page/map_page.html')
