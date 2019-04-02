@@ -40,7 +40,7 @@ def homepage():
     print(image_entities)
 
     # Return a Jinja2 HTML template and pass in image_entities as a parameter.
-    return app.send_static_file('map_page/map_page.html')
+    return app.send_static_file('map_page.html')
 
 
 @app.route('/crises', methods=['GET'])
