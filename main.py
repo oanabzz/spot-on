@@ -16,7 +16,7 @@ from datetime import datetime
 import logging
 import os
 
-from flask import Flask, redirect, render_template, request. jsonfy
+from flask import Flask, redirect, render_template, request, jsonfy
 
 from google.cloud import datastore
 from google.cloud import storage
