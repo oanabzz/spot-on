@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Map Page</title>
+    <link rel="stylesheet" href="map_page.css">
+    <script src="map_page/js/map_script.js"></script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7AQZ941MSQoAk1EkF80HMXMljr7Jj8Zs&callback=initMap">
+    </script>
+
+</head>
+<body id="body">
+    <div id="header">
+        <img src="../res/imageedit_1_7587001916.png" id="logo" onclick="controleNav()" alt="Logo">
+		<img src="../res/Hamburger2.png" id="hamburger" onclick="controleMenu()" onload="route()" alt="Menu">
+    </div>
+    <div id="sidenav"></div>
+    <div id="map"></div>
+	<div id="menu">
+		<br>
+		<button type="button" id="menuButton" onclick="redirect()">Map Page</button>
+        <br>
+		<br>
+		<br>
+		<button type="button" id="menuButtonLogChangeable" onclick="location.href='../../login_page/login.html';deleteAllCookies()">Log out</button>
+
+	</div>
+	<!--<div id="bottom" class="legend">-->
+		<!--<img src="../res/Earthquake.png" class="bottomLogo"style="margin-left: 2%">-->
+		<!--&nbsp &nbsp Earthquake-->
+		<!--<img src="../res/Fire.png" class="bottomLogo">-->
+		<!--&nbsp &nbsp Fire-->
+		<!--<img src="../res/Flood.png" class="bottomLogo">-->
+		<!--&nbsp &nbsp Flood-->
+		<!--<img src="../res/Shooting.png" class="bottomLogo">-->
+		<!--&nbsp &nbsp Shooting-->
+	<!--</div>-->
+</body>
+</html>
