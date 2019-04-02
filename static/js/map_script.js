@@ -227,9 +227,10 @@ function getAllCrises() {
         if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
             console.log(this.responseText);
             crisisJsonArray = JSON.parse(this.responseText);
-            crisisJsonArray.sort(function (a, b) {
-                return a.beginDate > b.beginDate;
-            });
+            console.log(crisisJsonArray);
+            // crisisJsonArray.sort(function (a, b) {
+            //     return a.beginDate > b.beginDate;
+            // });
             //printPlaces(crisisJsonArray);
             for (i = 0; i < crisisJsonArray.length; i++) {
                 if (crisisJsonArray[i].status == false) continue;
