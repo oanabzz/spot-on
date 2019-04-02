@@ -16,7 +16,7 @@ from datetime import datetime
 import logging
 import os
 
-from flask import Flask, redirect, render_template, request, jsonfy
+from flask import Flask, redirect, render_template, request, jsonify
 
 from google.cloud import datastore
 from google.cloud import storage
@@ -52,7 +52,7 @@ def get_crises():
     # each photo.
     query = datastore_client.query(kind='Events')
     image_entities = list(query.fetch())
-    return jsonfy(image_entities)
+    return jsonify(image_entities)
 
 @app.route('/upload_photo', methods=['GET', 'POST'])
 def upload_photo():
