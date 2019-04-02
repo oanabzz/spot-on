@@ -9,7 +9,7 @@ function findRole() {
         role = "common user";
     }
     if (!cookie.includes("Session")) {
-        role = "not logged";crises
+        role = "not logged";
     }
 }
 
@@ -74,23 +74,6 @@ function closeNav() {
     document.getElementById("sidenav").style.width = "0%";
 }
 
-// $('html').click(function() {
-//     document.getElementById("menu").style.visibility="hidden";
-// });
-
-// document.click = function(){
-//     document.getElementById("menu").style.visibility="hidden";
-// }
-/*
- window.addEventListener("mouseup", function (event) {
- if (event.target != document.getElementById("menu")) {
- closeMenu();
- }
- // if(event.target == document.getElementById("hamburger")){
- //     controleMenu();
- // }
- })
- */
 function controleNav() {
     if (document.getElementById("sidenav").style.width === "0%")
         openNav();
@@ -109,9 +92,6 @@ function closeMenu() {
     document.getElementById("menuButtonLogChangeable").style.visibility = "hidden";
     document.getElementById("menuButton").style.visibility = "hidden";
 
-    /*[].forEach.call(document.querySelectorAll('.menuButton'), function (el) {
-     el.style.visibility = 'hidden';
-     });*/
 }
 
 function controleMenu() {
@@ -120,7 +100,6 @@ function controleMenu() {
         openMenu();
     else
         closeMenu();
-    //document.getElementById("sidenav").style.width = "0%";
 }
 
 function controleNav() {
@@ -138,16 +117,10 @@ function initMap() {
         mapTypeId: 'terrain'
     });
 
-    //places will be loaded from db;
-    // var dummyCrisisPlaces = [
-    //     {lat: 47.174058, lng: 27.574899, radius: 350},
-    //     {lat: 47.145914, lng: 27.582092, radius: 250}
-    // ];
-
     getAllCrises();
-    setInterval(function () {
-        checkForNewCrises();
-    }, 5000);
+    // setInterval(function () {
+    //     checkForNewCrises();
+    // }, 5000);
 }
 
 //test function, to be deleted
