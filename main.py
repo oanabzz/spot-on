@@ -22,14 +22,25 @@ from google.cloud import datastore
 from google.cloud import storage
 from google.cloud import vision
 
+
 CLOUD_STORAGE_BUCKET = os.environ.get('CLOUD_STORAGE_BUCKET')
+
 
 app = Flask(__name__)
 
 
 @app.route('/')
 def homepage():
-    return app.send_static_file('templates/map_page/map_page.html')
+    # Create a Cloud Datastore client.
+    datastore_client = datastore.Client()
+
+    # Use the Cloud Datastore client to fetch information from Datastore about
+    # each photo.
+    query = datastore_client.query(kind='Faces')
+    image_entities = list(query.fetch())
+
+    # Return a Jinja2 HTML template and pass in image_entities as a parameter.
+    return render_template('map_page/map_page.html')
 
 
 @app.route('/upload_photo', methods=['GET', 'POST'])
@@ -45,7 +56,7 @@ def upload_photo():
     # Create a new blob and upload the file's content.
     blob = bucket.blob(photo.filename)
     blob.upload_from_string(
-        photo.read(), content_type=photo.content_type)
+            photo.read(), content_type=photo.content_type)
 
     # Make the blob publicly viewable.
     blob.make_public()
