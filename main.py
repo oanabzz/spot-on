@@ -52,6 +52,37 @@ def get_crises():
     # each photo.
     query = datastore_client.query(kind='Events')
     image_entities = list(query.fetch())
+
+    # Create a Cloud Datastore client.
+    datastore_client = datastore.Client()
+
+    # Fetch the current date / time.
+    current_datetime = datetime.now()
+
+    # The kind for the new entity.
+    kind = 'Events'
+
+    # The name/ID for the new entity.
+    name = "asdadasd234"
+
+    # Create the Cloud Datastore key for the new entity.
+    key = datastore_client.key(kind, name)
+
+    # Construct the new entity using the key. Set dictionary values for entity
+    # keys blob_name, storage_public_url, timestamp, and joy.
+    entity = datastore.Entity(key)
+    entity['beginDate'] = "Fri, 15 Jun 2018 16:53:46 GMT"
+    entity['description'] = "Inundatii in Horpaz"
+    entity['endDate'] = "Fri, 15 Jun 2018 16:53:46 GMT"
+    entity['latitude'] = 47.10762290939754
+    entity['longitude'] = 27.547357857463453
+    entity['radius'] = 350
+    entity['status'] = True
+    entity['type'] = "flood"
+
+    # Save the new entity to Datastore.
+    datastore_client.put(entity)
+
     return jsonify(image_entities)
 
 @app.route('/upload_photo', methods=['GET', 'POST'])

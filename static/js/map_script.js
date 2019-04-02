@@ -1,16 +1,7 @@
 var role;
 
 function findRole() {
-    var cookie = document.cookie;//"admin Session";
-    if (cookie.includes("admin")) {
-        role = "admin";
-    }
-    if (cookie.includes("common user")) {
-        role = "common user";
-    }
-    if (!cookie.includes("Session")) {
-        role = "not logged";
-    }
+    role = "common user";
 }
 
 function route() {
@@ -23,8 +14,7 @@ function route() {
     }
     if (role.includes("not logged")) {
         document.getElementById("menuButtonLogChangeable").innerHTML = "Log In";
-    }
-    else {
+    } else {
         document.getElementById("menuButtonLogChangeable").innerHTML = "Log Out";
     }
 }
@@ -51,8 +41,7 @@ function openNav() {
     if (mediaQuery.matches) {
         console.log("screen smaller than 479px");
         document.getElementById("sidenav").style.width = "90%";
-    }
-    else {
+    } else {
         console.log("screen larger than 479px");
         document.getElementById("sidenav").style.width = "33%";
     }
@@ -131,14 +120,6 @@ function printPlaces(arr) {
         console.log(arr[i].longitude);
         console.log(arr[i].radius);
         console.log(arr[i].status);
-    }
-}
-
-//deprecated
-function markPlaces(crisisJsonArray, map) {
-    for (i = 0; i < crisisJsonArray.length; i++) {
-        if (crisisJsonArray[i].status == false) continue;
-        markPlace(crisisJsonArray[i], i);
     }
 }
 
@@ -382,7 +363,7 @@ function getCrisisUpdate(wrapperId) {
     document.getElementById("lngInput").value = lng;
     document.getElementById("radInput").value = rad;
 
-    document.getElementById('updateCrisisButton').addEventListener("click", function() {
+    document.getElementById('updateCrisisButton').addEventListener("click", function () {
         updateCrisis(wrapperId, lat, lng, rad, null, null, null, document.getElementById('updateDetails').value, null);
         document.getElementById('updateDashboard').remove();
         location.reload();
