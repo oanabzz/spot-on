@@ -1,5 +1,5 @@
 var role;
-
+document.getElementById("menuButton").innerHTML = "My Places";
 function findRole() {
     role = "common user";
 }
