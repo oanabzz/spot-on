@@ -225,6 +225,7 @@ function getAllCrises() {
     xhr.open("GET", "/crises", true);
     xhr.onreadystatechange = function () {
         if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+            console.log(this.responseText);
             crisisJsonArray = JSON.parse(this.responseText);
             crisisJsonArray.sort(function (a, b) {
                 return a.beginDate > b.beginDate;

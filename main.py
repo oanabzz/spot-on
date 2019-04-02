@@ -16,7 +16,7 @@ from datetime import datetime
 import logging
 import os
 
-from flask import Flask, redirect, render_template, request
+from flask import Flask, redirect, render_template, request. jsonfy
 
 from google.cloud import datastore
 from google.cloud import storage
@@ -42,6 +42,17 @@ def homepage():
     # Return a Jinja2 HTML template and pass in image_entities as a parameter.
     return app.send_static_file('map_page/map_page.html')
 
+
+@app.route('/crises', methods=['GET'])
+def get_crises():
+    # Create a Cloud Datastore client.
+    datastore_client = datastore.Client()
+
+    # Use the Cloud Datastore client to fetch information from Datastore about
+    # each photo.
+    query = datastore_client.query(kind='Events')
+    image_entities = list(query.fetch())
+    return jsonfy(image_entities)
 
 @app.route('/upload_photo', methods=['GET', 'POST'])
 def upload_photo():
