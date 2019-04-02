@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width" />
+	<title>My Account Page</title>
+	<link href="my_account_page.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+	<script>
+        function initMap() {
+            var iasi = {lat: 47.151726, lng: 27.587914};
+            map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 12,
+                center: iasi,
+                mapTypeId: 'terrain'
+            });
+        }
+	</script>
+	<script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7AQZ941MSQoAk1EkF80HMXMljr7Jj8Zs&callback=initMap">
+    </script>
+</head>
+
+<body>
+	<div id="wrapper">
+		<header>
+			<img id="logo" src="../res/imageedit_1_7587001916.png">
+			<div id="bell" >
+  				<button onclick="subscriptionManager()" class="dropbtn"> <i id="subscription" class="far fa-bell-slash fa-3x"></i> </button>
+  				<div id="subscription-helper" class="dropdown-content"> click the bell to get notifications </div>
+			</div>
+			<img id="hamburger" src="../res/Hamburger2.png" onclick="controleMenu()"/>
+		</header>
+		<section>
+			<div id="title">My Places</div>
+
+			<div id="add-item" onclick="functieDeAdaugare()"><i class="fas fa-plus-circle fa-lg"></i>
+				<input type="text" placeholder="Name your place!" maxlength="20" id="bam-input">
+			</div>
+
+			<div id="wrapper-lista">
+				<ul id="lista">
+				</ul>
+			</div>
+
+			<div id="map"></div>
+		</section>
+		<footer></footer>
+	</div>
+
+	<div id="menu">
+		<br>
+		<button type="button" class="menuButton" onclick="location.href='../map_page/map_page.html'">Map page</button> 		
+		<br><br><br>
+		<button type="button" class="menuButton" onclick="location.href='../login_page/login.html'; deleteAllCookies()">Log Out</button>
+	</div>
+
+	<script src="js/notification-main.js"></script>
+	<script src="js/my_account_script.js"></script>
+</body>
+</html>

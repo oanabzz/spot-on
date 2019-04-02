@@ -1,0 +1,336 @@
+html, body {
+    background-color: var(--grey);
+    font-family: 'Montserrat', sans-serif;
+    height: 100%;
+    margin:0;
+}
+
+header {
+    background-color: var(--orange);
+    background-image: url('../res/CRIC_FUNDAL-05.png');
+    background-size: cover;
+    box-shadow: 2px 0 lightgray;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+}
+
+header > #logo {
+    grid-area: logo;
+    height: 60px;
+    width: auto;
+
+}
+
+header > #bell {
+    grid-area: bell;
+    height: 60px;
+    width: auto;
+    cursor: pointer;
+}
+
+#bell:hover .dropdown-content {
+    display: block;
+}
+
+.dropbtn {
+    background-color:rgba(0,0,0,0); 
+    height: 100%;
+    color:var(--dark-blue);
+    margin: auto 10% auto 0;
+    font-size: 16px;
+    border: none;
+}
+
+.dropdown-content {
+    top: 11%;
+    padding: 5px;
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* MENIU*/
+header > #hamburger {
+    grid-area: hamburger;
+    height: 60px;
+    width: auto;
+    color: var(--dark-blue);
+    cursor: pointer;
+    position: relative;
+}
+
+#menu {
+    background-color: var(--grey);
+    height: 0px;
+    position: fixed;
+    right: 0.4%;
+    text-align: center;
+    top: 11%;
+    transition: height 0.5s, background-color 0.5s ;
+    width: 200px;
+    z-index: 2;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    
+}
+
+.menuButton{
+    visibility: hidden;
+    background: rgba(48, 78, 100, 0.75);
+    color: #e6e6e6;
+    border: none;
+    cursor: pointer;
+    float: left;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    margin: 0 auto;
+    border-radius: 10px;
+    padding: 7% 25%;
+    text-align: center;
+    width: 200px;
+}
+
+.menuButton:hover {
+    background-color: #304e64;
+    color: #e6e6e6;
+}
+/* END MENIU*/
+
+#wrapper {
+    display: grid;
+    grid-template-areas:
+        "header" 
+        "content" 
+        "footer";
+    grid-template-rows: 1fr 8fr 1fr;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+#wrapper > header {
+    grid-area: header;
+    display: grid;
+    grid-template-areas:
+        "emptyleft logo empty bell hamburger emptyright";
+    grid-template-columns: 0.2fr 1fr 8fr 1fr 1fr 0.2fr;
+
+    width: 100%;
+} 
+
+#wrapper > section {
+    grid-area: content;
+    display: grid;
+    grid-template-areas:
+        "title     map"
+        "addItem   map"
+        "wrapLista map"; 
+    grid-template-columns:4fr 6fr; 
+    grid-template-rows: 1.2fr 0.8fr 8fr;
+    grid-gap: 15px;
+    width: 90%;
+    margin: 0 auto;
+    min-height: 0;  /* NEW */
+}
+
+section > #title {
+    grid-area: title;
+}
+
+section > #add-item {
+    grid-area: addItem;
+}
+
+section > #wrapper-lista {
+    grid-area: wrapLista;
+}
+
+section > #map {
+    grid-area: map;
+}
+
+#wrapper > footer {
+    grid-area: footer;
+}
+
+#title {
+    color: var(--dark-blue);
+    font-size: 48px; 
+    font-weight: bold;
+    margin: 3% auto;
+    text-align: center;
+}
+
+ #add-item {
+    overflow: hidden;
+    width: 100%;
+    color: var(--orange);
+    line-height: 2em;
+    margin-left: 20px;
+}
+
+#bam-input {
+    display: inline-block;
+    margin-left: -700px;
+    transition: all 0.6s ease-out;
+    width: 68%;
+    bottom: 10px;
+    line-height: 2em;
+    padding-left: 5px;
+}
+
+#add-item i {
+    display: inline-block;
+    margin: 5px;
+    width: 10%;
+}
+
+#wrapper-lista {
+    background: rgba(112,112,112,0.1); 
+    border-radius: 25px;
+    min-height: 0;      /* NEW; needed for Firefox */
+}
+
+
+#wrapper-lista #lista {
+    display: block;
+    height: 95%;
+    overflow-y: auto;
+    list-style-type: none;
+    opacity: 1;
+    padding-left: 20px;
+}
+
+#wrapper-lista #lista::-webkit-scrollbar {
+    margin-right:32px;
+    width: 1em;
+}
+ 
+#wrapper-lista #lista::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(131,209,223, 0.2);
+    border-radius: 10px;
+}
+ 
+#wrapper-lista #lista::-webkit-scrollbar-thumb {
+    background-color: var(--dark-blue);
+    border-radius: 10px;
+    outline: 1px solid slategrey;
+}
+
+#lista li {
+    color: var(--dark-blue);
+    line-height: 35px;
+    position: relative;
+}
+
+#lista li:hover {
+    border-radius: 10px;
+    color: var(--orange);
+}
+
+#lista li .delete-button {
+    margin: auto;
+    position: absolute;
+    right: 20px;
+    top: 30%;
+}
+
+#lista li .rename-button {
+    margin: auto;
+    position: absolute;
+    right: 45px;
+    top: 30%;
+}
+
+#lista li span input {
+    border-radius: 25px;
+    border: 1px solid gray;
+    margin: 0;
+    padding-left: 5px;
+} 
+
+@media screen and (min-width: 768px) and (max-width: 959px) {
+    #wrapper {
+        height: 200%;
+        grid-template-rows: 0.5fr 8fr 0.5fr;
+    }
+
+    #wrapper > section {
+        grid-template-areas:
+            "title"
+            "addItem"
+            "wrapLista"
+            "map";
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 7.8fr 10fr;
+        grid-gap: 10px;
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (min-width: 321px) and (max-width: 767px) {
+    #wrapper {
+        height: 200%;
+        grid-template-rows: 0.5fr 8fr 0.5fr;
+    }
+
+    #wrapper > section {
+        grid-template-areas:
+            "title"
+            "addItem"
+            "wrapLista"
+            "map";
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 7.5fr 10fr;
+        grid-gap: 15px;
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+@media all and (max-width: 320px) {
+    #wrapper {
+        height: 200%;
+        grid-template-rows: 0.4fr 8fr 0.4fr;
+    }
+
+    #wrapper > section {
+        grid-template-areas:
+            "title"
+            "addItem"
+            "wrapLista"
+            "map";
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 8fr 10fr;
+        grid-gap: 6px;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+}
+
+#main-container #map {
+    display: inline-block;
+    box-shadow: 2px 3px lightgray;
+    height: 90%;
+    left: 15px;
+    margin-bottom: 2%;
+    margin-left: 15px;
+    right: 0;
+    top: 0;
+    width: 60%;
+}
+
+:root {
+    --light-blue: #83d1df;
+    --dark-blue: #304e64;
+    --orange: #f48455;
+    --grey: #e6e6e5
+}

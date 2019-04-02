@@ -1,0 +1,134 @@
+@import url("./template_login/template_login.css");
+
+::placeholder {
+    color: #e6e6e6;
+    opacity: 0.6;
+}
+
+input {
+    outline: none;
+    border: none;
+    color: #e6e6e6;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: large;
+}
+
+input.username {
+    position: absolute;
+    width: 80%;
+    height: 7%;
+    margin: auto;
+    top: 35%;
+    left: 10%;
+    background: transparent;
+    border-bottom: 2pt solid #e6e6e6;
+}
+
+input.password {
+    position: absolute;
+    width: 80%;
+    height: 7%;
+    top: 45%;
+    left: 10%;
+    background: transparent;
+    border-bottom: 2pt solid #e6e6e6;
+    transition: color 0.5s;
+}
+
+input.password:focus {
+    border-bottom: 2pt solid #f48455;
+    transition: border-bottom 0.5s;
+}
+
+input.username:focus {
+    border-bottom: 2pt solid #f48455;
+    transition: border-bottom 0.5s;
+}
+
+.loginButton {
+    position: absolute;
+    width: 40%;
+    height: 8%;
+    left: 30%;
+    top: 65%;
+    font-size: x-large;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: #304e64;
+    background-color: #83d1df;
+    outline: none;
+    border: none;
+    border-radius: 5vh;
+}
+
+.loginButton:hover {
+    background-color: #e6e6e6;
+    color: #f48455;
+}
+
+.txtClick {
+    position: absolute;
+    top: 80%;
+    font-family: 'Montserrat', sans-serif;
+    color: #e6e6e6;
+    font-size: medium;
+    text-align: center;
+    width: 100%;
+}
+
+.links {
+    text-decoration: none;
+    color: #e6e6e6;
+}
+
+.links:hover {
+    color: #f48455;
+}
+
+.forgot:hover {
+    color: #f48455;
+}
+
+.messages {
+    background-color: #f48455;
+    border: #304e64;
+    height: 8%;
+    width: 80%;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    border-radius: 20px;
+    font-size: small;
+    position: absolute;
+    top: 55%;
+    left: 10%;
+}
+
+#invalidSmth {
+    visibility: hidden;
+}
+
+@media screen and (min-width: 2560px) {
+    input {
+        font-size: xx-large;
+    }
+
+    .txtClick {
+        font-size: x-large;
+    }
+
+    .loginButton {
+        font-size: xx-large;
+    }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 959px) {
+    input {
+        font-size: medium;
+    }
+
+    .txtClick {
+        font-size: small;
+    }
+}

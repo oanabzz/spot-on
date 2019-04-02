@@ -1,0 +1,299 @@
+html, body{
+	height: 100%;
+	background-color: var(--grey);
+	font-family: 'Montserrat', sans-serif;
+}
+
+#header{
+	height: 10%;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: var(--orange);
+	box-shadow: 2px 0 lightgray;
+	background-image: url('../res/CRIC_FUNDAL-05.png');
+	background-size: cover;
+}
+#bottom{
+    height: 8%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: lightgray;
+    box-shadow: 2px 0 lightgray;
+    background-size: cover;
+	font-family: 'Montserrat', sans-serif;
+	font-size:100%;
+} 
+
+.bottomLogo{
+	width: 3%;
+	height: width;
+	margin-top: 0.5%;
+	margin-left: 17%
+}
+
+#logo{
+	height: 90%;
+	margin-top:0.2%;
+	margin-left: 2%;
+}
+
+#map{
+	height: 80%;
+	width: 100%;
+	box-shadow: 2px 3px lightgray;
+}
+
+/*MENIUL*/
+
+#hamburger{
+	height: 60%;
+	margin-top:0.8%;
+	margin-right: 2%;
+	float: right;
+	cursor: pointer;
+}
+
+#menu{
+	height: 0px;
+	width: 200px;
+	background-color: var(--grey);
+	border: 1px solid lightgray;
+	position: absolute;
+	transition: height 0.5s, background-color 0.5s ;
+	right: 0.4%;
+	top: 11%;
+	z-index: 2;
+	text-align: center;
+}
+
+.menuButton{
+	opacity: 0;
+	background: rgba(48, 78, 100, 0.75);
+	color: #e6e6e6;
+	border: none;
+	cursor: pointer;
+	padding: 7% 25%;
+	width: 200px;
+	text-align: center;
+	text-decoration: none;
+	display: block;
+	font-size: 16px;
+	margin-left: auto;
+	float: left;
+	font-family: 'Montserrat', sans-serif;
+	border-radius: 10px;
+	transition: opacity 0.5s;
+	transition-delay: 0.5s;
+}
+
+.menuButton:hover {
+    background-color: #304e64;
+    color: #e6e6e6;
+}
+
+/*MENIUL*/
+
+#sidenav{
+	height: 80%;
+	width: 320px;
+	background-color: rgba(0, 0, 0, 0.7);
+	background-size: cover;
+	position: absolute;
+	transition: width 0.5s, background-color 0.5s ;
+	z-index: 1;
+	overflow-y:scroll;
+	overflow-x:hidden;
+	/*min-height: 500px;*/
+}
+
+#sidenavTitle{
+	text-align: center;
+	font-size: 150%;
+	padding-top: 5%;
+	padding-bottom: 5%;
+	margin-bottom: 10%;
+	margin-left: 10%;
+	margin-right: 10%;
+	color: var(--grey);
+	border-bottom: 1px solid var(--grey);
+}
+
+#logo{
+	height: 90%;
+	margin-top:0.2%;
+	margin-left: 2%;
+	float: left;
+	cursor: pointer;
+}
+
+.sidenavButtonWrapper{
+	height: 10%;
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.sidenavButton{
+	font-size: 100%;
+	height: 100%;
+	width: 100%;
+	background-color: var(--orange);
+	border: none;
+	cursor: pointer;
+	box-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+	color: var(--grey);
+}
+
+.disabledSidenavButton{
+	font-size: 100%;
+	height: 100%;
+	width: 100%;
+	background-color: var(--grey);
+	border: none;
+	cursor: default;
+	box-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+	color: black;
+}
+
+#pickPlaceButton{
+
+}
+
+.crisisInput{
+	margin-top: 5%;
+	margin-bottom: 5%;
+	padding-left: 10%;
+	color: var(--grey);
+}
+
+.crisisInput input{
+	background-color: rgba(0, 0, 0, 0);
+	border: none;
+	margin-right: 11%;
+	float: right;
+	border-bottom: 1px solid var(--grey);
+	color: var(--grey);
+}
+
+#setButton{
+	width: 25%;
+	height: 60%;
+	float: right;
+	margin-right: -17%;
+}
+
+#postButtonWrapper{
+	position: relative;
+	margin-top: 40%;
+}
+
+#latitude{
+	visibility:visible;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+    #hamburger{
+		margin-top: 1%;
+	}
+	#bottom{
+		font-size:100%;
+	}
+	.bottomLogo{
+	width: 3%;
+	height: width;
+	margin-top: 0.5%;
+	margin-left: 12%
+	}
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+    #hamburger{
+		margin-top: 1.5%;
+	}
+	#bottom{
+		font-size:80%;
+	}
+	.bottomLogo{
+	width: 3%;
+	height: width;
+	margin-top: 0.5%;
+	margin-left: 10%
+	}
+}
+
+@media all and (max-width: 320px) {
+    #hamburger{
+		margin-top: 2%;
+	}
+	#bottom{
+		font-size:70%;
+	}
+	.bottomLogo{
+	width: 7%;
+	height: width;
+	margin-top: 0.5%;
+	margin-left: 19%
+	}
+}
+
+#descriptionTextAreaWrapper {
+	width: 80%;
+	height: 10%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 25px;
+}
+
+#DescriptionTextArea {
+	width: 100%;
+	height: 100%;
+	resize: none;
+	background-color: var(--grey);
+}
+
+#DescriptionTextArea:focus {
+	outline: none !important;
+	border: 1px solid var(--orange);
+}
+
+#crisisTypeSelectWrapper {
+    width: 80%;
+    height: 20%;
+    border-bottom: 1px solid var(--grey);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+}
+
+#crisisTypeSelect {
+    width: 100%;
+    background-color: var(--grey);
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
+
+:root{
+	--light-blue: #83d1df;
+	--dark-blue: #304e64;
+	--orange: #f48455;
+	--grey: #e6e6e5
+}

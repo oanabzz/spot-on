@@ -1,0 +1,129 @@
+body, html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+}
+
+.bg {
+    position: absolute;
+    background-image: url("../../res/CRIC FUNDAL-05.png");
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    z-index: 10;
+}
+
+#loginFrame {
+    position: relative;
+    width: 400px;
+    height: 90%;
+    min-height: 400px;
+    min-width: 300px;
+    max-width: 70%;
+    z-index: 15;
+    background: #304e64;
+    margin: auto;
+    border-radius: 2vh;
+    background: rgba(48, 78, 100, 0.8);
+}
+
+#logoDiv {
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 1;
+}
+
+#logo {
+    position: absolute;
+    margin: auto;
+    top: 5%;
+    left: 0;
+    right: 0;
+    width: 35%;
+    opacity: 1;
+
+}
+
+/*Media query*/
+
+@media screen and (max-width: 479px) {
+    .bg {
+        min-width: 300px;
+        min-height: 500px;
+        height: -webkit-fill-available;
+    }
+
+    #loginFrame {
+        height: 500px;
+        max-width: 90%;
+        min-width: 280px;
+        min-height: 420px;
+        max-height: 500px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 959px) {
+    #loginFrame {
+        max-width: 900px;
+        min-width: 280px;
+        min-height: 420px;
+        max-height: 800px;
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px) {
+    .bg {
+        min-height: 700px;
+    }
+
+    #loginFrame {
+        height: 700px;
+        max-width: 900px;
+        min-width: 280px;
+        min-height: 420px;
+        max-height: 800px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 959px) {
+    .bg {
+        min-height: 500px;
+    }
+
+    #loginFrame {
+        height: 80%;
+        width: 45%;
+        min-height: 500px;
+    }
+}
+
+@media screen and (min-width: 960px) and (max-width: 1440px) {
+    .bg {
+        min-height: 510px;
+    }
+
+    #loginFrame {
+        min-height: 500px;
+    }
+}
+
+@media screen and (min-width: 2560px) {
+    .bg {
+        min-height: 1300px;
+    }
+
+    #loginFrame {
+        height: 70%;
+        width: 25%;
+        min-height: 1100px;
+    }
+
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        CriC - Login
+    </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="login.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script src="js/login.js"></script>
+</head>
+
+
+<body>
+<div class="bg">
+    <div id="loginFrame">
+        <div id="logoDiv">
+            <img id="logo" src="../res/imageedit_1_7587001916.png" alt="Logo">
+        </div>
+        <input class="username" id="username" type="text" name="username" placeholder="Username" required>
+        <input class="password" id="password" type="password" name="password" placeholder="Password" required>
+        <button class="loginButton" id="loginButton" type="button" onclick="validateInput()">LOGIN</button>
+        <div class="txtClick">
+            <a class="links" href="create_new_account.html">
+                New to CriC? Create a new account here!
+            </a>
+            <p>
+
+            </p>
+            <a class="links" href="../map_page/map_page.html">
+                Continue without an account
+            </a>
+        </div>
+        <div class="messages" id="invalidSmth">
+            <p>
+                Invalid user or password!
+            </p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

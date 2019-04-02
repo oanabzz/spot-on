@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="create_new_account.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script src="js/create.js"></script>
+</head>
+
+<body>
+<div class="bg">
+    <div id="loginFrame">
+        <div id="logoDiv">
+            <img id="logo" src="../res/imageedit_1_7587001916.png">
+        </div>
+        <input class="email" type="email" name="email" placeholder="Email" required>
+        <input class="username" type="text" name="username" placeholder="Username" required>
+        <input class="password" type="password" name="password" placeholder="Password" required>
+        <input class="retypePassword" type="password" name="rePassword" placeholder="Retype Password" required>
+
+        <button class="createNewAccount" type="button" onclick="validateInput()">CREATE</button>
+        <div class="messages" id="msgEmail">
+            <p>
+                Not a valid email!
+            </p>
+        </div>
+        <div class="messages" id="msgUser">
+                <span id="msgUserSpan" >
+                    Not a valid username! You may only use lower letters and digits!
+                </span>
+        </div>
+        <div class="messages" id="msgPass">
+            <span style="position: absolute; left:1%; right:1%; top:10%; bottom: 10%;font-size: x-small;">
+                Invalid password! Your password needs to have at least one lower letter, a capital one and a digit.
+            </span>
+        </div>
+        <div class="messages" id="samePass">
+            <p>
+                Your passwords don't match!
+            </p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+

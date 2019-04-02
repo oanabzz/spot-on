@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Map Page</title>
+    <link rel="stylesheet" href="add_crisis_page.css">
+    <script src="js/add_crisis_page.js"></script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7AQZ941MSQoAk1EkF80HMXMljr7Jj8Zs&callback=initMap">
+    </script>
+
+</head>
+
+<body>
+<div id="header">
+    <img src="../res/imageedit_1_7587001916.png" id="logo" onclick="controleNav()" alt="Logo">
+    <img src="../res/Hamburger2.png" id="hamburger" onclick="controleMenu()" alt="Menu">
+</div>
+<div id="sidenav">
+    <div id="sidenavTitle">
+        Add Crisis
+    </div>
+
+    <div class="sidenavButtonWrapper">
+        <button id="pickPlaceButton" class="sidenavButton">
+            Pick Place
+        </button>
+    </div>
+
+    <div class="crisisInput">
+        Lat: <input type="number" name="lat" step="0.0001" min="0" id="latInput">
+    </div>
+
+    <div class="crisisInput">
+        Lng: <input type="number" name="lng" step="0.0001" min="0" id="lngInput">
+    </div>
+
+    <div class="crisisInput">
+        Rad: <input type="number" name="rad" step="0.5" min="0" id="radInput">
+    </div>
+
+    <div id="descriptionTextAreaWrapper">
+        <textarea id="DescriptionTextArea" placeholder="crisis summary" maxlength="200"></textarea>
+    </div>
+
+    <div id="crisisTypeSelectWrapper">
+        <select title="type" id="crisisTypeSelect">
+            <option value="unknown" selected>Unknown</option>
+            <option value="fire">Fire</option>
+            <option value="earthquake">Earthquake</option>
+            <option value="flood">Flood</option>
+            <option value="shooting">Shooting</option>
+            <option value="terrorist attack">Terrorist Attack</option>
+        </select>
+    </div>
+
+    <div class="sidenavButtonWrapper">
+        <button class="disabledSidenavButton" id="postCrisisButton">
+            Post Crisis
+        </button>
+    </div>
+
+    <!--<div id="postButtonWrapper" class="sidenavButtonWrapper">-->
+    <!--<button class="sidenavButton">-->
+    <!--Post-->
+    <!--</button>-->
+    <!--</div>-->
+
+</div>
+<div id="map"></div>
+
+<div id="menu">
+    <br>
+    <button type="button" class="menuButton" onclick="location.href='../map_page/map_page.html'">Map page</button>
+    <br>
+    <br>
+    <br>
+    <button type="button" class="menuButton" onclick="location.href='../login_page/login.html'">Log Out</button>
+</div>
+
+<!--<div id="bottom" class="legend">
+    <img src="../res/Earthquake.png" class="bottomLogo"style="margin-left: 2%">
+    &nbsp &nbsp Earthquake
+    <img src="../res/Fire.png" class="bottomLogo">
+    &nbsp &nbsp Fire
+    <img src="../res/Flood.png" class="bottomLogo">
+    &nbsp &nbsp Flood
+    <img src="../res/Shooting.png" class="bottomLogo">
+    &nbsp &nbsp Shooting
+</div>-->
+</body>
+</html>
