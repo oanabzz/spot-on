@@ -26,8 +26,7 @@ from google.cloud import vision
 CLOUD_STORAGE_BUCKET = os.environ.get('CLOUD_STORAGE_BUCKET')
 
 
-app = Flask(__name__)
-
+app = Flask(__name__, static_url_path="", static_folder="./static")
 
 @app.route('/')
 def homepage():
@@ -40,7 +39,7 @@ def homepage():
     image_entities = list(query.fetch())
 
     # Return a Jinja2 HTML template and pass in image_entities as a parameter.
-    return render_template('map_page/map_page.html')
+    return app.send_static_file('map_page/map_page.html')
 
 
 @app.route('/upload_photo', methods=['GET', 'POST'])
