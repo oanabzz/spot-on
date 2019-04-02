@@ -1,22 +1,23 @@
 var role;
 document.getElementById("menuButton").innerHTML = "My Places";
+
 function findRole() {
     role = "common user";
 }
 
 function route() {
-    findRole();
-    if (role.includes("admin")) {
-        document.getElementById("menuButton").innerHTML = "Add Crisis";
-    }
-    if (role.includes("common user")) {
-        document.getElementById("menuButton").innerHTML = "My Places";
-    }
-    if (role.includes("not logged")) {
-        document.getElementById("menuButtonLogChangeable").innerHTML = "Log In";
-    } else {
-        document.getElementById("menuButtonLogChangeable").innerHTML = "Log Out";
-    }
+    // findRole();
+    // if (role.includes("admin")) {
+    //     document.getElementById("menuButton").innerHTML = "Add Crisis";
+    // }
+    // if (role.includes("common user")) {
+    document.getElementById("menuButton").innerHTML = "My Places";
+    // }
+    // if (role.includes("not logged")) {
+    //     document.getElementById("menuButtonLogChangeable").innerHTML = "Log In";
+    // } else {
+    //     document.getElementById("menuButtonLogChangeable").innerHTML = "Log Out";
+    // }
 }
 
 function redirect() {
